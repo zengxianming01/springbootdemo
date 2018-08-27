@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springbootdemo.mapper.HrmsHouseMapper" >
+  <resultMap id="BaseResultMap" type="com.example.springbootdemo.pojo.HrmsHouse" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="HRMS_HOUSE_ID" property="hrmsHouseId" jdbcType="DECIMAL" />
+    <result column="HOUSE_NO" property="houseNo" jdbcType="VARCHAR" />
+    <result column="HOUSE_FOR_SHORT" property="houseForShort" jdbcType="VARCHAR" />
+    <result column="HOUSE_TYPE" property="houseType" jdbcType="VARCHAR" />
+    <result column="HOUSE_PROVINCE" property="houseProvince" jdbcType="VARCHAR" />
+    <result column="HOUSE_CITY" property="houseCity" jdbcType="VARCHAR" />
+    <result column="HOUSE_STREET" property="houseStreet" jdbcType="VARCHAR" />
+    <result column="HOUSE_STATUS" property="houseStatus" jdbcType="VARCHAR" />
+    <result column="HOUSE_AREA" property="houseArea" jdbcType="VARCHAR" />
+    <result column="BUNK" property="bunk" jdbcType="VARCHAR" />
+    <result column="LANDLORD_NAME" property="landlordName" jdbcType="VARCHAR" />
+    <result column="LANDLORD_PHONE" property="landlordPhone" jdbcType="VARCHAR" />
+    <result column="AGENCY_NAME" property="agencyName" jdbcType="VARCHAR" />
+    <result column="AGENCY_LINKMAN" property="agencyLinkman" jdbcType="VARCHAR" />
+    <result column="AGENCY_PHONE" property="agencyPhone" jdbcType="VARCHAR" />
+    <result column="HOUSE_REMARK" property="houseRemark" jdbcType="VARCHAR" />
+    <result column="CREATED_BY" property="createdBy" jdbcType="DECIMAL" />
+    <result column="CREATION_DATE" property="creationDate" jdbcType="TIMESTAMP" />
+    <result column="LAST_UPDATED_BY" property="lastUpdatedBy" jdbcType="DECIMAL" />
+    <result column="LAST_UPDATE_DATE" property="lastUpdateDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+</mapper>

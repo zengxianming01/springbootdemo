@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" data-th-src="@{/js/index.js}" src="@{/js/index.js}"></script>
+    <link data-th-href="@{css/index.css}" href="@{css/index.css}">
+</head>
+<body>
+   <span>用户姓名</span><input th:id="${user.username}" th:name="${user.username}" th:value="${user.username}"/>
+   <br/>
+   <span>用户年龄</span><input  th:value="${user.id}"/>
+   <br/>
+   <span>用户生日</span><input th:value="${user.birthday}"/>
+    <br/>
+   <span>用户生日</span><input th:value="${#dates.format(user.birthday,'yyyy-MM-dd')}"/>
+<br/>
+ <div th:object="${user}">
+     <span>用户姓名</span><input th:id="*{username}" th:name="*{username}" th:value="*{username}"/>
+     <br/>
+     <span>用户年龄</span><input  th:value="*{id}"/>
+     <br/>
+     <span>用户生日</span><input th:value="*{birthday}"/>
+     <br/>
+     <span>用户生日</span><input th:value="*{#dates.format(birthday,'yyyy-MM-dd hh:mm:ss')}"/>
+
+ </div>
+   <div th:if="${user.age}== 20">十八岁的天空</div>
+   <div th:if="${user.age}gt 18">大于</div>
+   <div th:if="${user.age}lt 18">小于</div>
+   <div th:if="${user.age}ge 18">大于等于</div>
+   <div th:if="${user.age} le 18">小于等于</div>
+  <select>
+      <option>选择框</option>
+      <option th:selected="${user.username eq 'Lee'}">Lee</option>
+      <option th:selected="${user.username eq 'Tom'}">Tom</option>
+      <option th:selected="${user.username eq 'Today'}">Today</option>
+
+  </select>
+</body>
+</html>

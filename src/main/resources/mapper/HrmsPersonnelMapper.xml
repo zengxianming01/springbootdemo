@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springbootdemo.mapper.HrmsPersonnelMapper" >
+  <resultMap id="BaseResultMap" type="com.example.springbootdemo.pojo.HrmsPersonnel" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="HRMS_PERSONNEL_ID" property="hrmsPersonnelId" jdbcType="DECIMAL" />
+    <result column="PERSONNEL_NO" property="personnelNo" jdbcType="VARCHAR" />
+    <result column="PERSONNEL_JOB_NUM" property="personnelJobNum" jdbcType="VARCHAR" />
+    <result column="PERSONNEL_NAME" property="personnelName" jdbcType="VARCHAR" />
+    <result column="PERSONNEL_SEX" property="personnelSex" jdbcType="VARCHAR" />
+    <result column="DEPARTMENT_NAME" property="departmentName" jdbcType="VARCHAR" />
+    <result column="BASE_LAND" property="baseLand" jdbcType="VARCHAR" />
+    <result column="PERSONNEL_PHONE" property="personnelPhone" jdbcType="VARCHAR" />
+    <result column="PERSONNEL_EMAIL" property="personnelEmail" jdbcType="VARCHAR" />
+    <result column="PERSONNEL_STATUS" property="personnelStatus" jdbcType="VARCHAR" />
+    <result column="PERSONNEL_REMARK" property="personnelRemark" jdbcType="VARCHAR" />
+    <result column="CREATED_BY" property="createdBy" jdbcType="DECIMAL" />
+    <result column="CREATION_DATE" property="creationDate" jdbcType="TIMESTAMP" />
+    <result column="LAST_UPDATED_BY" property="lastUpdatedBy" jdbcType="DECIMAL" />
+    <result column="LAST_UPDATE_DATE" property="lastUpdateDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+  <select id="findByJobNum" parameterType="java.lang.String" resultMap="BaseResultMap" >
+              select  * from hrms_personnel h
+               where h.PERSONNEL_JOB_NUM=#{jobnum}
+
+  </select>
+<!--  <select id="getProcedure" statementType="CALLABLE" parameterType="java.util.Map" >
+     {call ry_personnel_pkg.p_test(#{val1,mode=IN,jdbcType=VARCHAR},#{val2,mode=OUT,jdbcType=VARCHAR})}
+  </select>-->
+  <select id="getFunction" statementType="CALLABLE"  parameterType="java.util.Map">
+      {#{p_3,mode=OUT,jdbcType=NUMERIC}=call ry_personnel_pkg.p_test(
+                       #{p_1,mode=IN,jdbcType=NUMERIC},
+                       #{p_2,mode=IN,jdbcType=NUMERIC}
+                    )}
+  </select>
+  
+  <select id="getCount" resultType="java.lang.Integer">
+      select count(1) from hrms_personnel
+
+  </select>
+</mapper>

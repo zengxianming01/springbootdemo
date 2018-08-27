@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootdemo.mapper.WxuserinfoMapper">
+  <resultMap id="BaseResultMap" type="com.example.springbootdemo.pojo.Wxuserinfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="headimag" jdbcType="VARCHAR" property="headimag" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="subscribe_scene" jdbcType="VARCHAR" property="subscribeScene" />
+    <result column="subscribe" jdbcType="INTEGER" property="subscribe" />
+    <result column="subscribe_time" jdbcType="TIMESTAMP" property="subscribeTime" />
+  </resultMap>
+</mapper>
